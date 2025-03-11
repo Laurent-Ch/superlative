@@ -1,9 +1,10 @@
 import "@/src/ui/styles/globals.scss";
 import type { Metadata } from "next";
+import Navbar from "../ui/components/navbar";
 
 export const metadata: Metadata = {
   title: "Superlative",
-  description: "Lorem Ipsum",
+  description: "Enthusiastic copywriting curation",
   icons: {
     icon: "/favicon.ico",
   },
@@ -16,7 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
