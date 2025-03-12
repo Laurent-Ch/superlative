@@ -16,14 +16,14 @@ export default function Navbar() {
 
   return (
     <div className={`w-2/5 text-xl ${styles["navbar"]}`}>
-      <div className="flex flex-row gap-6 justify-around">
+      <div className="w-full flex gap-2 justify-between">
         {links.map(({ href, label }) => (
           <Link
             key={href}
             href={href}
-            className={`flex items-center gap-2 ${styles.link} ${
-              pathname === href ? styles.active : ""
-            }`}
+            className={`flex-1 flex justify-center items-center ${
+              styles.link
+            } ${pathname === href ? styles.active : ""}`}
           >
             <span className="w-[5px]" aria-hidden="true" />
             {label}
@@ -54,10 +54,16 @@ export default function Navbar() {
               </span>
             </div>
           </div>
-          <div className="flex justify-around gap-2 text-white">
-            <div>Visions</div>
-            <div>Mission</div>
-            <div>Valeurs</div>
+          <div className="w-full flex gap-2 justify-between text-white">
+            <div className="flex-1 flex justify-center items-center">
+              Visions
+            </div>
+            <div className="flex-1 flex justify-center items-center">
+              Mission
+            </div>
+            <div className="flex-1 flex justify-center items-center">
+              Valeurs
+            </div>
           </div>
         </>
       )}
