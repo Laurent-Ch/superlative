@@ -24,7 +24,7 @@ export default function Navbar() {
         </Link>
       </div>
       <div
-        className={`w-2/5 min-h-[4rem] text-xl flex flex-col gap-2 ${styles["navbar"]}`}
+        className={`fixed top-[2rem] left-1/2 -translate-x-1/2 min-h-[4rem] w-2/5 text-xl font-semibold flex flex-col gap-2 items-center rounded-md z-50 py-[1rem]! ${styles.navbar__background}`}
       >
         <div className="w-full flex gap-2 justify-between">
           {links.map(({ href, label }) => (
