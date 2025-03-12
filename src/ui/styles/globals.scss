@@ -1,7 +1,24 @@
 @import url("https://use.typekit.net/zib8kpb.css");
 @import "tailwindcss";
+@layer theme, base, components, utilities;
 
 $theme-main-color:#FE79A7;
+
+@layer utilities {
+  @keyframes marquee {
+    from {
+      transform: translateX(100%);
+    }
+
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 10s linear infinite;
+  }
+}
 
 *,
 *::before,

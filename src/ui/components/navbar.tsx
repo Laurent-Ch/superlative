@@ -15,13 +15,13 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <div>
-      <nav className={`w-2/5 text-xl ${styles["navbar"]}`}>
+    <div className={`w-2/6 text-xl ${styles["navbar"]}`}>
+      <div className="flex flex-row">
         {links.map(({ href, label }) => (
           <Link
             key={href}
             href={href}
-            className={`flex items-center gap-1 ${styles.link} ${
+            className={`flex items-center gap-2 ${styles.link} ${
               pathname === href ? styles.active : ""
             }`}
           >
@@ -36,7 +36,21 @@ export default function Navbar() {
             />
           </Link>
         ))}
-      </nav>
+      </div>
+      {pathname === "/manifesto" && (
+        <>
+          <div className="w-full overflow-hidden whitespace-nowrap">
+            <div className="inline-block animate-marquee">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </div>
+          </div>
+          <div className="flex justify-around gap-2">
+            <div>Visions</div>
+            <div>Mission</div>
+            <div>Valeurs</div>
+          </div>
+        </>
+      )}
     </div>
   );
 }
