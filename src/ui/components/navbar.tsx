@@ -15,8 +15,8 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <div className={`w-2/6 text-xl ${styles["navbar"]}`}>
-      <div className="flex flex-row">
+    <div className={`w-2/5 text-xl ${styles["navbar"]}`}>
+      <div className="flex flex-row gap-6 justify-around">
         {links.map(({ href, label }) => (
           <Link
             key={href}
@@ -25,15 +25,20 @@ export default function Navbar() {
               pathname === href ? styles.active : ""
             }`}
           >
+            <span className="w-[5px]" aria-hidden="true" />
             {label}
-            <Image
-              className={`self-start ${pathname === href ? "" : "invisible"}`}
-              src="/logoPink.svg"
-              alt=""
-              width={5}
-              height={5}
-              sizes="90vw"
-            />
+            {pathname === href ? (
+              <Image
+                className={`self-start ${pathname === href ? "" : "invisible"}`}
+                src="/logoPink.svg"
+                alt=""
+                width={5}
+                height={5}
+                sizes="90vw"
+              />
+            ) : (
+              <span className="w-[5px]" aria-hidden="true" />
+            )}
           </Link>
         ))}
       </div>
@@ -49,7 +54,7 @@ export default function Navbar() {
               </span>
             </div>
           </div>
-          <div className="flex justify-around gap-2">
+          <div className="flex justify-around gap-2 text-white">
             <div>Visions</div>
             <div>Mission</div>
             <div>Valeurs</div>
