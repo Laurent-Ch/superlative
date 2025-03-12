@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "@/src/ui/styles/navbar.module.scss";
-
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -21,11 +21,19 @@ export default function Navbar() {
           <Link
             key={href}
             href={href}
-            className={`${styles.link} ${
+            className={`flex items-center gap-1 ${styles.link} ${
               pathname === href ? styles.active : ""
             }`}
           >
             {label}
+            <Image
+              className={`self-start ${pathname === href ? "" : "invisible"}`}
+              src="/logoPink.svg"
+              alt=""
+              width={5}
+              height={5}
+              sizes="90vw"
+            />
           </Link>
         ))}
       </nav>
