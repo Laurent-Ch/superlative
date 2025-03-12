@@ -1,3 +1,7 @@
 export default function Page() {
-  return <p>Manifesto page</p>;
+  return (
+    <div className="min-h-screen bg-main-color">
+      <p>Manifesto page</p>
+    </div>
+  );
 }

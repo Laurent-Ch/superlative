@@ -39,9 +39,14 @@ export default function Navbar() {
       </div>
       {pathname === "/manifesto" && (
         <>
-          <div className="w-full overflow-hidden whitespace-nowrap">
+          <div className="w-full overflow-hidden whitespace-nowrap text-white">
             <div className="inline-block animate-marquee">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              <span>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+              </span>
+              <span>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+              </span>
             </div>
           </div>
           <div className="flex justify-around gap-2">
