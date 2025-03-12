@@ -1,14 +1,34 @@
 "use client";
 
+import styles from "@/src/ui/styles/navbar.module.scss";
+
+import Link from "next/link";
 import { usePathname } from "next/navigation";
+
+const links = [
+  { href: "/showcase", label: "Accueil" },
+  { href: "/portfolio", label: "Archives" },
+  { href: "/manifesto", label: "Manifesto" },
+];
 
 export default function Navbar() {
   const pathname = usePathname();
-  const bgColor = pathname === "/" ? "bg-main-color" : "bg-red";
 
   return (
-    <div className={`h-auto ${bgColor}`}>
-      <h1>Navbar</h1>
+    <div>
+      <nav className={`w-2/5 text-xl ${styles["navbar"]}`}>
+        {links.map(({ href, label }) => (
+          <Link
+            key={href}
+            href={href}
+            className={`${styles.link} ${
+              pathname === href ? styles.active : ""
+            }`}
+          >
+            {label}
+          </Link>
+        ))}
+      </nav>
     </div>
   );
 }
