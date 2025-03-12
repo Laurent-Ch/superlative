@@ -15,11 +15,13 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <div className="navbar__container">
+    <div className="navbar__container sticky">
       <div
         className={`fixed h-[4rem] top-[2rem] left-[2rem] flex justify-center items-center`}
       >
-        <Image src="/logo.svg" alt="" width={23} height={23} sizes="90vw" />
+        <Link href={"/"}>
+          <Image src="/logo.svg" alt="" width={23} height={23} sizes="90vw" />
+        </Link>
       </div>
       <div
         className={`w-2/5 min-h-[4rem] text-xl flex flex-col gap-2 ${styles["navbar"]}`}
