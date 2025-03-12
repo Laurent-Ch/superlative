@@ -9,9 +9,18 @@ $theme-main-color:#FE79A7;
     from {
       transform: translateX(0%);
     }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes marquee2 {
+    from {
+      transform: translateX(100%);
+    }
 
     to {
-      transform: translateX(-50%);
+      transform: translateX(0%);
     }
   }
 
@@ -19,6 +28,12 @@ $theme-main-color:#FE79A7;
     display: inline-block;
     white-space: nowrap;
     animation: marquee 10s linear infinite;
+  }
+
+  .animate-marquee2 {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee2 10s linear infinite;
   }
 }
 

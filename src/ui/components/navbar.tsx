@@ -15,13 +15,13 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <div className={`w-2/5 text-xl ${styles["navbar"]}`}>
+    <div className={`w-2/5 text-xl flex flex-col gap-2 ${styles["navbar"]}`}>
       <div className="w-full flex gap-2 justify-between">
         {links.map(({ href, label }) => (
           <Link
             key={href}
             href={href}
-            className={`flex-1 flex justify-center items-center ${
+            className={`flex-1 flex gap-1 justify-center items-center ${
               styles.link
             } ${pathname === href ? styles.active : ""}`}
           >
@@ -44,16 +44,21 @@ export default function Navbar() {
       </div>
       {pathname === "/manifesto" && (
         <>
-          <div className="w-full overflow-hidden whitespace-nowrap text-white">
-            <div className="inline-block animate-marquee">
+          <div className="relative flex w-full overflow-x-hidden text-white">
+            <div className="animate-marquee whitespace-nowrap">
               <span>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+                A passionate and assertive curation of all copywriting that exudes
+                cachet.&nbsp;
               </span>
+            </div>
+            <div className="absolute top-0 inline-block animate-marquee2 whitespace-nowrap">
               <span>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.{" "}
+                A passionate and assertive curation of all copywriting that exudes
+                cachet.&nbsp;
               </span>
             </div>
           </div>
+
           <div className="w-full flex gap-2 justify-between text-white">
             <div className="flex-1 flex justify-center items-center">
               Visions
