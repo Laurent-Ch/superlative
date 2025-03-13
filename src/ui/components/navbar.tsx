@@ -4,16 +4,23 @@ import styles from "@/src/ui/styles/navbar.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useHash } from "@/src/lib/hooks/useHash";
 
-const links = [
+const mainLinks = [
   { href: "/showcase", label: "Accueil" },
   { href: "/portfolio", label: "Archives" },
   { href: "/manifesto", label: "Manifesto" },
 ];
 
+const manifestoLinks = [
+  { href: "#vision", label: "Vision" },
+  { href: "#mission", label: "Mission" },
+  { href: "#values", label: "Valeurs" },
+];
+
 export default function Navbar() {
   const pathname = usePathname();
-
+  const hash = useHash();
   return (
     <div className="navbar__container sticky">
       <div
@@ -27,7 +34,7 @@ export default function Navbar() {
         className={`fixed top-[2rem] left-1/2 -translate-x-1/2 min-h-[4rem] w-2/5 text-xl font-semibold flex flex-col gap-2 items-center rounded-md z-50 py-[1rem]! ${styles.navbar__background}`}
       >
         <div className="w-full flex gap-2 justify-between">
-          {links.map(({ href, label }) => (
+          {mainLinks.map(({ href, label }) => (
             <Link
               key={href}
               href={href}
@@ -72,18 +79,19 @@ export default function Navbar() {
             </div>
 
             <div className="w-full flex gap-2 justify-between text-white">
-              <div className="flex-1 flex justify-center items-center">
-                Vision
-              </div>
-              <div className="flex-1 flex justify-center items-center">
-                Mission
-              </div>
-              <div className="flex-1 flex justify-center items-center">
-                Valeurs
-              </div>
+              {manifestoLinks.map(({ href, label }) => (
+                <Link
+                  key={href}
+                  href={href}
+                  className="flex-1 flex justify-center items-center"
+                >
+                  {label}
+                </Link>
+              ))}
             </div>
           </>
         )}
+        <div>{hash}</div>
       </div>
     </div>
   );

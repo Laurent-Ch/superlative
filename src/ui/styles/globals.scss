@@ -1,5 +1,5 @@
+@use "tailwindcss";
 @import url("https://use.typekit.net/zib8kpb.css");
-@import "tailwindcss";
 @layer theme, base, components, utilities;
 
 $theme-main-color:#FE79A7;
