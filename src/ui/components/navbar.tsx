@@ -4,7 +4,8 @@ import styles from "@/src/ui/styles/navbar.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useHash } from "@/src/lib/hooks/useHash";
+// import { useHash } from "@/src/lib/hooks/useHash";
+import { useActiveSection } from "@/src/lib/hooks/useActiveSection";
 
 const mainLinks = [
   { href: "/showcase", label: "Accueil" },
@@ -20,7 +21,9 @@ const manifestoLinks = [
 
 export default function Navbar() {
   const pathname = usePathname();
-  const hash = useHash();
+  // const hash = useHash();
+  const fragment = useActiveSection(["vision", "mission", "values"]);
+
   return (
     <div className="navbar__container sticky">
       <div
@@ -31,7 +34,7 @@ export default function Navbar() {
         </Link>
       </div>
       <div
-        className={`fixed top-[2rem] left-1/2 -translate-x-1/2 min-h-[4rem] w-2/5 text-xl font-semibold flex flex-col gap-2 items-center rounded-md z-50 py-[1rem]! ${styles.navbar__background}`}
+        className={`fixed top-[2rem] left-1/2 -translate-x-1/2 min-h-[4rem] w-2/5 text-xl font-semibold flex flex-col gap-2 items-center rounded-md z-50 py-[1rem] ${styles.navbar__background}`}
       >
         <div className="w-full flex gap-2 justify-between">
           {mainLinks.map(({ href, label }) => (
@@ -91,7 +94,6 @@ export default function Navbar() {
             </div>
           </>
         )}
-        <div>{hash}</div>
       </div>
     </div>
   );

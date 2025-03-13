@@ -6,7 +6,6 @@ export const useHash = () => {
   const [hash, setHash] = React.useState<string>("");
 
   React.useEffect(() => {
-    // Ensure code only runs on client side
     if (typeof window !== "undefined") {
       const onHashChanged = () => setHash(window.location.hash);
       const { pushState, replaceState } = window.history;
