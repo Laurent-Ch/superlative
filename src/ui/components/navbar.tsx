@@ -5,7 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 // import { useHash } from "@/src/lib/hooks/useHash";
-import { useActiveSection } from "@/src/lib/hooks/useActiveSection";
+// import { useActiveSection } from "@/src/lib/hooks/useActiveSection";
+import ProgressBar from "./ProgressBar";
 
 const mainLinks = [
   { href: "/showcase", label: "Accueil" },
@@ -22,7 +23,7 @@ const manifestoLinks = [
 export default function Navbar() {
   const pathname = usePathname();
   // const hash = useHash();
-  const fragment = useActiveSection(["vision", "mission", "values"]);
+  // const fragment = useActiveSection(["vision", "mission", "values"]);
 
   return (
     <div className="navbar__container sticky">
@@ -66,6 +67,7 @@ export default function Navbar() {
         </div>
         {pathname === "/manifesto" && (
           <>
+            <ProgressBar />
             <div className="relative flex w-full overflow-x-hidden text-white">
               <div className="animate-marquee whitespace-nowrap">
                 <span>

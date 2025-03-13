@@ -1,6 +1,6 @@
 import "@/src/ui/styles/globals.scss";
 import type { Metadata } from "next";
-import Navbar from "../ui/components/navbar";
+import Navbar from "../ui/components/Navbar";
 
 export const metadata: Metadata = {
   title: "Superlative",
