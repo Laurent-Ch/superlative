@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 // import { useHash } from "@/src/lib/hooks/useHash";
-// import { useActiveSection } from "@/src/lib/hooks/useActiveSection";
+import { useActiveSection } from "@/src/lib/hooks/useActiveSection";
 import ProgressBar from "./ProgressBar";
 
 const mainLinks = [
@@ -23,7 +23,7 @@ const manifestoLinks = [
 export default function Navbar() {
   const pathname = usePathname();
   // const hash = useHash();
-  // const fragment = useActiveSection(["vision", "mission", "values"]);
+  const fragment = useActiveSection(["vision", "mission", "values"]);
 
   return (
     <div className="navbar__container sticky">
@@ -42,7 +42,7 @@ export default function Navbar() {
             <Link
               key={href}
               href={href}
-              className={`flex-1 flex gap-1 justify-center items-center ${
+              className={`flex-1 flex justify-center items-center ${
                 styles.link
               } ${pathname === href ? styles.active : ""}`}
             >
@@ -88,7 +88,9 @@ export default function Navbar() {
                 <Link
                   key={href}
                   href={href}
-                  className="flex-1 flex justify-center items-center"
+                  className={`flex-1 flex gap-1 justify-center items-center ${
+                    styles.link
+                  } ${fragment === href.slice(1) ? styles.active : ""}`}
                 >
                   {label}
                 </Link>
