@@ -14,7 +14,7 @@ export default function Home() {
             sizes="90vw"
           />
         </div>
-        <div className="tagline___container tracking-widest font-semibold text-2xl">
+        <div className="tracking-widest font-semibold text-2xl">
           <div className="flex justify-between">
             <p>Si le super</p>
             <p>est relatif,</p>

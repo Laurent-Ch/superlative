@@ -4,7 +4,6 @@ import styles from "@/src/ui/styles/navbar.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-// import { useHash } from "@/src/lib/hooks/useHash";
 import { useActiveSection } from "@/src/lib/hooks/useActiveSection";
 import ProgressBar from "./ProgressBar";
 
@@ -22,7 +21,6 @@ const manifestoLinks = [
 
 export default function Navbar() {
   const pathname = usePathname();
-  // const hash = useHash();
   const fragment = useActiveSection(["vision", "mission", "values"]);
 
   return (
