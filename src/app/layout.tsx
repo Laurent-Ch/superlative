@@ -1,6 +1,7 @@
 import "@/src/ui/styles/globals.scss";
 import type { Metadata } from "next";
 import Navbar from "../ui/components/Navbar";
+import ModalContextProvider from "../lib/context/ModalContextProvider";
 
 export const metadata: Metadata = {
   title: "Superlative",
@@ -17,10 +18,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className="antialiased">
-        <Navbar />
-        {children}
-      </body>
+      <ModalContextProvider>
+        <body className="antialiased">
+          <Navbar />
+          {children}
+        </body>
+      </ModalContextProvider>
     </html>
   );
 }
