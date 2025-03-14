@@ -24,7 +24,7 @@ export default function Navbar() {
   const fragment = useActiveSection(["vision", "mission", "values"]);
 
   return (
-    <div className="navbar__container sticky">
+    <div className="sticky">
       <div
         className={`fixed h-[4rem] top-[2rem] left-[2rem] flex justify-center items-center`}
       >

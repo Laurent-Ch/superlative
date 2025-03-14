@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <>
       <div className="min-h-screen min-w-screen bg-main-color flex flex-col justify-around items-center text-black">
-        <div className="hero__container flex flex-row justify-center">
+        <div className="flex flex-row justify-center">
           <Image
             src="/heroBanner.svg"
             alt="Superlative logo"
